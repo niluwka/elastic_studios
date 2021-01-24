@@ -1,0 +1,268 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1em;
+
+    &::before,
+    &::after {
+        font-family: 'FontAwesome';
+        font-style: normal;
+    }
+}
+
+i {
+    color: $black;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    background: rgb(207, 207, 207);
+    color: white;
+    font-family: 'OpenSans';
+}
+
+.icon {
+    &-be::before {
+        content: '\f1b4';
+    }
+
+    &-facebook::before {
+        content: '\f39e';
+    }
+
+    &-instagram::before {
+        content: '\f16d';
+    }
+
+    &-down::before {
+        content: '\f078';
+        font-size: 24px;
+        color: $white;
+        line-height: 33px;
+        font-weight: 300;
+    }
+
+    &-arrow::before {
+        content: '\f178';
+        font-weight: 300;
+
+    }
+
+    &-up::before {
+        content: '\f077';
+        font-size: 24px;
+        color: $white;
+        line-height: 33px;
+        font-weight: 300;
+    }
+
+    &-phone::after {
+        content: '\f8d3';
+        font-weight: 300;
+        color: white;
+    }
+
+    &-map::before {
+        content: '\f3c5';
+        font-weight: 300;
+        color: white;
+    }
+
+    &-mass::before {
+        content: '\f0e0';
+        font-weight: 300;
+        color: white;
+    }
+
+    &-menu::before {
+        content: '\f142';
+        font-weight: 300;
+    }
+}
+
+.btn {
+
+    color: $white;
+    background: $yellow;
+    display: block;
+    width: max-content;
+    padding: 18px 45px 19px 46px;
+    border: 2px solid $yellow;
+    border-radius: 56px;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 41px;
+    transition: 500ms;
+    @include media(500px) {
+        font-size: 25px;
+       
+    }
+    @include media(400px) {
+        font-size: 20px;
+        padding: 10px 40px 10px 40px;
+       
+    }
+    @include media(350px) {
+        padding: 5px 30px 5px 30px;
+       
+    }
+
+    &:hover {
+        border: 2px solid $yellow;
+        color: $yellow;
+        background: transparent;
+
+    }
+
+}
+
+@for $x from 2 to 11 {
+    .bg#{$x} {
+        padding: 31px 41px 23px 41px;
+    }
+}
+
+@for $x from 1 to 11 {
+    .bg#{$x} {
+        background: url('../images/bg#{$x}.webp') no-repeat;
+        background-size: cover;
+        background-position: center center;
+        background-position-y: 20%;
+    }
+}
+
+$main-gradient: (1: $bea,
+    2:$pot,
+    3:$fash_cou,
+    4: $mee_peo_pro,
+    5: $nat_birth,
+    6:$mee_peo_pro,
+    7:$mee_peo_pro,
+    8:$fash_cou,
+    9:$nat_birth,
+    10:$nat_birth);
+
+.main {
+
+    @each $main,
+    $color in $main-gradient {
+        &--#{$main} {
+            background: $color;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+    }
+}
+
+.main__beauty-btn {
+    background: $yellow;
+    border-radius: 10px;
+    display: inline-block;
+    padding: 19px 33px 18px 26px;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 41px;
+    color: $white;
+    margin-left: 33px;
+    @include media(500px) {
+        font-size: 25px;
+       
+    }
+
+    span {
+        margin-left: 22px;
+        display: inline-block;
+    }
+}
+
+.main__beauty:last-of-type {
+    justify-content: center;
+}
+
+.bg11 {
+    background: $bg;
+}
+
+.slider__prev {
+    top: calc(50vh - 265px / 2 - 25px - 30px);
+}
+
+.slider__next {
+    // left:  0;
+    top: calc(50vh + 265px / 2 + 30px);
+}
+
+.slider__btn {
+    padding: 0 10px;
+    right: 5px;
+    position: absolute;
+    // top: 0;
+    // bottom: 0;
+    background: transparent;
+    color: #fff;
+    border: none;
+    outline: none;
+    font-size: 25px;
+    cursor: pointer;
+    transition: 0.5s;
+    @include media(600px) {
+        left:  3px;
+    }
+    // background: rgba(243, 189, 189, 0.425);
+}
+
+.slider__dots {
+    right: 7px;
+    padding: 0 10px;
+    width: max-content;
+    height: max-content;
+    background: transparent;
+    position: absolute;
+    border-radius: 6px;
+    bottom: 10px;
+    top: calc(50vh - 265px / 2);
+    @include media(600px) {
+        left:  5px;
+    }
+    // top: 0;
+    // right: 0;
+}
+
+.slider__dots-item.active {
+    background: $yellow;
+}
+
+.slider__dots-item {
+    width: 15px;
+    height: 15px;
+    background: #8a8888;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.btn__save {
+    border: 2px solid #CCAF40;
+    padding: 18px 50px 19px 50px;
+    display: inline-block;
+    border-radius: 56px;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 41px;
+    color: #CCAF40;
+}
+.btn__save:hover{
+    
+}

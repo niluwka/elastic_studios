@@ -1,0 +1,151 @@
+.contact {
+    background: $black;
+    padding: 265px 0 109px 0;
+
+    &__container {
+        @include container();
+
+    }
+
+    &__content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 70px;
+        justify-content: space-between;
+
+        &-img {
+            margin-bottom: 76px;
+        }
+
+        &-inscription {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        &-list {
+            display: flex;
+
+            li {
+                margin-left: 54px;
+            }
+
+            li:first-of-type {
+                margin-left: 54px;
+            }
+
+            a {
+                width: 49px;
+                height: 49px;
+                padding: 15px 10px;
+                font-size: 28px;
+            }
+        }
+
+        &-title {
+            font-weight: 400;
+            font-size: 64px;
+            line-height: 87px;
+            color: $white;
+            margin-bottom: 29px;
+        }
+    }
+}
+
+.form {
+    max-width: 570px;
+
+    &__item {
+        label {
+            font-weight: 400;
+            font-size: 25px;
+            line-height: 34px;
+            color: $white;
+            display: block;
+            margin-bottom: 3px;
+
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 25px;
+            color: #E4E4E4;
+            background: transparent;
+            border: 2px solid $white;
+            outline: none;
+            border-radius: 5px;
+        }
+
+        input {
+            padding: 26px 0 27px 25px;
+            margin-bottom: 30px;
+        }
+
+        textarea {
+            width: 570px;
+            height: 352px;
+            padding: 27px 0 0 25px;
+            resize: none;
+            margin-bottom: 52px;
+        }
+    }
+
+    &__item:last-of-type {
+        @include row();
+        justify-content: space-between;
+        margin-bottom: 127px;
+    }
+
+    &__info {
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 33px;
+        color: $white;
+        max-width: 337px;
+    }
+
+    &__button {
+        padding: 19px 44px;
+        background: $yellow;
+        border: none;
+        outline: none;
+        font-weight: 600;
+        font-size: 30px;
+        line-height: 41px;
+        color: $white;
+        border-radius: 1px;
+    }
+
+    &__contact {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        overflow: hidden;
+
+        &-link {
+            font-weight: 400;
+            font-size: 28px;
+            line-height: 34px;
+            color: $white;
+
+            i {
+                margin-left: 30px;
+                display: inline-block;
+                width: 28px;
+                height: 29px;
+                text-align: end;
+            }
+        }
+
+        &-item {
+            margin-bottom: 30px;
+        }
+
+        &-item:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+}

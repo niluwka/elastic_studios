@@ -1,0 +1,13 @@
+-var links = [{link:'Home',path:'../index.html'},{link:'Book',path:'book.html'},{link:'Contact',path:'contact.html'},{link:'About',path:'about.html'}]
+header.header
+    nav.nav
+        a.nav__logo(href="index.html")
+            img(src="images/logo.webp", alt="")
+        
+        button.header__btn.icon-menu    
+        ul.nav__list
+            each value in links 
+                li.nav__list-item
+                    a.nav__list-link(href=value.path)= value.link
+              
+                            
